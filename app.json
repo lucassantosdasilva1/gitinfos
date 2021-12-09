@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "gitinfos",
+    "slug": "gitinfos",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "gitinfos"
+}
