@@ -1,6 +1,8 @@
 import React from "react";
-import { View, Text, TextComponent } from "react-native";
-import { Repository } from "../../components/Repository";
+
+import { ItemBar } from "../../components/ItemBar";
+import { RepositoryCard } from "../../components/RepositoryCard";
+
 import { 
     Container,
     Header,
@@ -12,8 +14,13 @@ import {
     UserName,
     LogoutButton,
     Icon,
-    Repositories
+    Repositories,
+    ResumBar
 } from "./styles";
+
+const data = {
+
+}
 
 export function Home(){
     return (
@@ -32,8 +39,26 @@ export function Home(){
                         </LogoutButton>                   
                 </UserWrapper>
             </Header>
+
+            <ResumBar>
+                <ItemBar title={'Repositories'} num={'5'}/>
+                <ItemBar title={'Followers'} num={'1'}/>
+                <ItemBar title={'Following'} num={'0'}/>
+            </ResumBar>
+
             <Repositories>
-                <Text>asdasdasd</Text>
+                {/* <RepositoryList 
+                    data={data}
+                    keyExtractor={item => (item.id)}
+                    renderItem={({item}) => (<RepositoryCard data = {item}/>) }
+                ></RepositoryList> */}
+
+                <RepositoryCard></RepositoryCard>
+                <RepositoryCard></RepositoryCard>
+                <RepositoryCard></RepositoryCard>
+                <RepositoryCard></RepositoryCard>
+                <RepositoryCard></RepositoryCard>
+                <RepositoryCard></RepositoryCard>
             </Repositories>
         </Container>
     )

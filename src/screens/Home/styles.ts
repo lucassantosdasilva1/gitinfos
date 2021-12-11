@@ -1,14 +1,15 @@
 import styled from "styled-components/native";
 import {RFPercentage, RFValue} from "react-native-responsive-fontsize"
 import theme from "../../global/styles/theme";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
-import { BorderlessButton } from "react-native-gesture-handler";
+import { getBottomSpace, getStatusBarHeight } from "react-native-iphone-x-helper";
+import { BorderlessButton, FlatList } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons"
+
 
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #011001;
+    
     margin-top: ${getStatusBarHeight()}px;
 
     flex-direction: column;
@@ -77,8 +78,26 @@ export const Container = styled.View`
             `;
 
     export const Repositories = styled.View`
+        flex: 1;
+        padding: 0 24px;
+
+        padding-top: ${RFValue(12)}px;
+        background-color: ${({theme}) => theme.colors.secondary};
+    `;
+        export const RepositoryList = styled(FlatList).attrs({
+            showsVerticalScrollIndicator: false,
+            contentContainerStyle: {
+                paddingBottom: getBottomSpace()
+            }
+        })``;
+
+    export const ResumBar = styled.View`
         
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        height: ${RFValue(72)}px; 
         width: 100%;
-        position: absolute;
-        background-color: red;
+
     `;
