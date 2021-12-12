@@ -1,18 +1,22 @@
 import React from "react";
 import { Container, Title, Num} from "./style";
 
-interface dataItemProps {
+interface ItemProps {
     title: string;
-    num: string;
+    num: number;
+}
+
+interface dataProps {
+    data: ItemProps;
 }
 
 
 
-export function ItemBar( {title, num} : dataItemProps ) {
+export function ItemBar( {data} : dataProps ) {
     return (
         <Container>
-            <Num>{num}</Num>
-            <Title>{title}</Title>
+            <Num>{data.num}</Num>
+            <Title>{data.title}</Title>
         </Container>
     )
 }

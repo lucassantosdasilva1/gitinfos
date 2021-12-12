@@ -12,11 +12,10 @@ import {
 } from "./style";
 
 interface RepositoryDataProps {
-    id: string;
     name: string;
-    type: 'public' | 'private'
+    visibility: string;
     description: string;
-    languages: string
+    language: string
 }
 
 interface props {
@@ -37,21 +36,21 @@ interface props {
 // }
 
 
-export function RepositoryCard(){
+export function RepositoryCard( {data}: props ){
     return (
         <Container>
             <Header>
-                <Name>gitinfos</Name>
+                <Name>{data.name}</Name>
                 
-                    <Type>public</Type>
+                    <Type>{data.visibility}</Type>
                 
             </Header>
 
-            <Description>Basic Mobile app that provides finances control throught aklsjdalsdjalsdjaslkdajslkdajsldkajsdklajskldajsdlkasjdlkasjdaklsjdaklsdjaklsdjalskdjaskldjaslkdjaslkdjasldkjasdlkasjdlkj...</Description>
+            <Description>{data.description}</Description>
 
             <Footer>
                 <Icon name="circle" ></Icon>
-                <ProgramingLanguage>Typescript</ProgramingLanguage>
+                <ProgramingLanguage>{data.language}</ProgramingLanguage>
             </Footer>
 
         </Container>
